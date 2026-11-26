@@ -6,6 +6,7 @@
 // A pure function of its inputs, so the preview and the export match.
 
 import { animalsIn } from './creatures.js';
+import { nounsIn, HOLDABLE } from './noun-icons.js';
 
 const num = (v, d = 0) => (Number.isFinite(+v) ? +v : d);
 const cl = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -34,7 +35,7 @@ const WORDS = [
   [/\b(flag)\b/i, 'flag'],
   [/\b(heart|in love|loved|falling for)\b/i, 'heart'],
   [/\b(famous|fame|celebrity)\b/i, 'star'],
-  [/\b(grew|growth|soared|surged|profits? (?:rose|climbed|jumped)|doubled|tripled|increase[sd]?)\b/i, 'chartUp'],
+  [/\b(grew(?! up)|growth|soared|surged|profits? (?:rose|climbed|jumped)|doubled|tripled|increase[sd]?)\b/i, 'chartUp'],
   [/\b(crashed|collapsed|plunged|plummeted|bankrupt|lost everything|went broke|losses|shrank)\b/i, 'chartDown'],
   [/\b(box|package|parcel|delivery|delivered|shipment)\b/i, 'box'],
   [/\b(gear|engine|machine|machinery)\b/i, 'gear'],
@@ -91,29 +92,73 @@ export function autoProps(narration, dur, rawProps, characters, opts = {}) {
       }
     }
   } catch (e) { /* the words are only a hint */ }
-  return zoo.concat(autoItems(narration, D, rawProps, characters, opts));
+  // the main person (the one the camera follows): things they hold go into their hands
+  let holder = null;
+  (characters || []).some((c, i) => { if (c && !(c.par < 0) && !c.far && !c.animal) { holder = c._who || ('#' + i); return true; } return false; });
+  return zoo.concat(autoItems(narration, D, rawProps, characters, { ...opts, holder }));
 }
-function autoItems(narration, D, rawProps, characters, opts) {
-  const have = Array.isArray(rawProps) ? rawProps.length : 0;
-  const max = Math.max(0, Math.min(num(opts.max, 2), 5 - have));
+/** Everything the words name that the app can draw (its own props plus the everyday-things library), timed by where it is said. */
+export function namedThings(narration, dur) {
+  const D = Math.max(.8, num(dur, 5)), first = .25, last = Math.max(first + .5, D - .6);
+  const base = detectScenery(narration, D).map((e) => ({ ...e, weak: false }));
+  const more = nounsIn(narration).filter((n) => !base.some((b) => b.name === n.name))
+    .map((n) => ({ t: r2(cl(first + n.share * (last - first), first, last)), name: n.name, word: n.word, weak: n.weak }));
+  return base.concat(more).sort((a, b) => a.t - b.t);
+}
+/**
+ * The pictures to add: real objects before ideas, about one for every 2 seconds of the beat (2 to 5), each shown from the moment its
+ * word is said until the next one appears, never two at the same moment, placed in a free spot away from the people.
+ */
+export function autoItems(narration, D, rawProps, characters, opts = {}) {
+  const have = Array.isArray(rawProps) ? rawProps.filter((p) => !(p && typeof p === 'object' && !Array.isArray(p) && p.twinkle)).length : 0;
+  const want = opts.max != null ? num(opts.max, 2) : cl(Math.round(D / 2), 2, 5);
+  const max = Math.max(have > 8 ? 1 : 0, Math.min(want, 8 - Math.min(have, 6)));
   if (!max) return [];
   const xs = (characters || []).map((c) => num(c && c.x, 800));
   const slots = [[1260, 330], [340, 330], [1260, 560], [340, 560], [800, 250]];
   const free = (sx) => xs.length ? Math.min(...xs.map((x) => Math.abs(x - sx))) : 999;
-  const out = [];
-  let lastT = -9;
-  const used = new Set();
-  for (const ev of detectScenery(narration, D)) {
-    if (out.length >= max) break;
-    if (mentioned(rawProps, ev.name)) continue;
-    if (ev.t - lastT < 1.4) continue;
-    const slot = slots.filter((_, i) => !used.has(i)).sort((a, b) => free(b[0]) - free(a[0]))[0];
-    if (!slot) break;
-    used.add(slots.indexOf(slot));
-    const t0 = r2(Math.max(.1, ev.t - .15)), t1 = r2(Math.min(D - .1, t0 + 2.4));
-    if (t1 - t0 < .8) continue;
-    out.push(['item', ev.name, null, slot[0], slot[1], 1.05, t0, t1, { auto: true }]);
-    lastT = ev.t;
+  const cand = namedThings(narration, D).filter((ev) => !mentioned(rawProps, ev.name));
+  const pick = [];
+  for (const ev of [...cand.filter((e) => !e.weak), ...cand.filter((e) => e.weak)]) {
+    if (pick.length >= max) break;
+    if (pick.some((p) => Math.abs(p.t - ev.t) < .85)) continue;
+    pick.push(ev);
   }
+  pick.sort((a, b) => a.t - b.t);
+  const out = [];
+  const used = new Set();
+  pick.forEach((ev, i) => {
+    let open = slots.map((s, k) => k).filter((k) => !used.has(k));
+    if (!open.length) { used.clear(); open = slots.map((s, k) => k); }
+    const k = open.sort((a, b) => free(slots[b][0]) - free(slots[a][0]))[0];
+    used.add(k);
+    const t0 = r2(Math.max(.1, Math.min(ev.t - .15, D - 1.05))), next = pick[i + 1] ? pick[i + 1].t - .05 : D - .1;
+    const t1 = r2(Math.min(D - .1, Math.max(t0 + 1.2, Math.min(next + .6, t0 + 3.2))));
+    if (t1 - t0 < .8) return;
+    // a thing a person can hold appears IN the main person's hands (they hold it up to show it); everything else floats beside them
+    if (opts.holder && HOLDABLE.has(ev.name) && !out.some((p) => p[8] && p[8].follow)) { used.delete(k); out.push(['item', ev.name, null, 800, 450, .62, t0, t1, { auto: true, follow: opts.holder, at: 'chest', fdy: 8, layer: 'front', hold: true }]); return; }
+    out.push(['item', ev.name, null, slots[k][0], slots[k][1], 1.05, t0, t1, { auto: true, float: 6 }]);
+  });
   return out;
+}
+
+/**
+ * The time of day the words set ("that night", "the next morning"), as a tint over the whole picture so the story's clock is SEEN:
+ * night = deep blue and dim, dawn/morning = warm gold, evening = orange dusk. null when the words say nothing or the scene chose its own.
+ */
+export const DAYTIME = [
+  [/\b(that night|at night|tonight|midnight|night fell|in the dark(?:ness)?|nightfall|late at night|all night|every night)\b/i, 'night', ['#0b1638', .5]],
+  [/\b(sunset|dusk|evening|twilight)\b/i, 'dusk', ['#ff7a3d', .16]],
+  [/\b(next morning|that morning|in the morning|every morning|sunrise|dawn|woke up|daybreak)\b/i, 'morning', ['#ffc26b', .1]],
+];
+export function daytimeTint(narration, sc = {}) {
+  if (!sc || Array.isArray(sc.tint) || sc.daytime === false) return null;
+  const bg = typeof sc.background === 'string' && sc.background.length < 40 ? sc.background : '';
+  const s = String(narration || '');
+  for (const [re, name, tint] of DAYTIME) {
+    if (!re.test(s)) continue;
+    if (name === 'night' && /night|space|star|moon|dark/i.test(bg)) return null;   // the set already is a night set
+    return { name, tint: tint.slice() };
+  }
+  return null;
 }

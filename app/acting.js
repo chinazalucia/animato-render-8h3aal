@@ -46,6 +46,8 @@ const ACTIONS = {
   knock:     { hit: { a2: 100, a3: 42, tr: 4 }, rest: { a2: 100, a3: 42, tr: 4 }, osc: { a3: [24, 4.2], tr: [1.5, 4.2] }, tA: .1, tH: .2, tS: .1, hold: 1.4 },
   eureka:    { ant: { dy: 7, a2: 60, a3: -4, hy: 2 }, hit: { a2: 170, a3: 4, dy: -9, hr: -5, hy: -4 }, rest: { a2: 162, a3: 8, dy: -3, hr: -3, hy: -2 }, tA: .16, tH: .1, tS: .26, hold: 1.2, feel: 'excited' },
   gasp:      { ant: { dy: 4, tr: 3 }, hit: { a0: 60, a1: 170, a2: 60, a3: 170, hr: -5, dy: -6, tr: -6 }, rest: { a0: 56, a1: 172, a2: 56, a3: 172, hr: -4, dy: -2, tr: -4 }, tA: .1, tH: .08, tS: .22, hold: 1.1, feel: 'shocked' },
+  // holding a thing up in front of the chest with both hands (the wallet, the cup, the letter the narrator talks about)
+  present:   { ant: { a0: 30, a1: -70, a2: 30, a3: -70 }, hit: { a0: 50, a1: -132, a2: 50, a3: -132, tr: 3 }, rest: { a0: 46, a1: -128, a2: 46, a3: -128, tr: 2 }, tA: .14, tH: .12, tS: .2, hold: Infinity },
   hop:       { hit: { a0: 126, a1: 118, a2: 126, a3: 118, tr: 0 }, rest: { a0: 128, a1: 120, a2: 128, a3: 120 }, bob: [15, 3.2], osc: { tr: [3, 3.2] }, tA: 0, tH: .12, tS: .15, hold: 1.4, feel: 'excited' },
 };
 export const ACTION_NAMES = Object.keys(ACTIONS);

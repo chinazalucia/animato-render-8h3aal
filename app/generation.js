@@ -4157,6 +4157,7 @@ export function expandCompactBeat(spec = {}, env = {}, onEmitScene = null) {
   }
 
   const sceneObj = {
+    _autoScenery: true,
     name: s.n || s.name || undefined,
     duration,
     narration,

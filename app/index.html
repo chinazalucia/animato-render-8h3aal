@@ -134,7 +134,7 @@ if(framed)post({type:"stickman:ready"});
 <meta property="og:title" content="Animato Stickman Studio">
 <meta property="og:description" content="Professional YouTube 16:9 stickman and animation generator with AI scene creation and audio sync.">
 <meta name="theme-color" content="#090b10">
-<script type="module">import * as Sync from '/sync.js';import * as Gen from '/generation.js';import * as CharUtils from '/character-builder-utils.js';import * as TranscribeAlign from '/transcribe-align.js';import * as Transcriber from '/transcriber-client.js';import * as CharEngine from '/character-engine.js';import * as CharStyles from '/character-styles.js';import * as BgMode from '/background-mode.js';import * as SendToAi from '/send-to-ai.js';import * as Motion from '/motion-polish.js';window.AnimatoMotion=Motion;import * as Face from '/expressions.js';window.AnimatoFace=Face;import * as Acting from '/acting.js';window.AnimatoActing=Acting;import * as Gaze from '/gaze.js';window.AnimatoGaze=Gaze;import * as PStage from '/portrait-stage.js';import * as CastId from '/cast-identity.js';window.AnimatoPStage=PStage;window.AnimatoCast=CastId;import * as Director from '/director.js';window.AnimatoDirector=Director;import * as Shots from '/shots.js';window.AnimatoShots=Shots;import * as Engage from '/engage.js';window.AnimatoEngage=Engage;import * as CharPack from '/character-pack.js';window.AnimatoCharPack=CharPack;import * as CharIK from '/character-ik.js';window.AnimatoIK=CharIK;import * as MyBg from '/my-backgrounds.js';import * as Alive from '/liveliness.js';import * as Cinema from '/cinema.js';import * as PartsGuide from '/parts-guide.js';import * as CT from '/content-types.js';import * as PM from '/projects.js';window.AnimatoPM=PM;window.AnimatoCT=CT;window.AnimatoAlive=Alive;window.AnimatoCinema=Cinema;window.AnimatoParts=PartsGuide;window.AnimatoMyBg=MyBg;import * as PhotoTags from '/photo-tags.js';import * as PhotoStore from '/photo-store.js';import * as Team from '/production-team.js';window.AnimatoTeam=Team;window.AnimatoPhotoTags=PhotoTags;window.AnimatoPhotos=PhotoStore;window.AnimatoBg=BgMode;window.AnimatoSend=SendToAi;window.AnimatoCharStyles=CharStyles;window.AnimatoSync=Sync;window.AnimatoGen=Gen;window.AnimatoCharUtils=CharUtils;window.AnimatoTranscribeAlign=TranscribeAlign;window.AnimatoTranscriber=Transcriber;window.AnimatoCharEngine=Object.assign({},CharEngine,{formatCharacterDnaPrompt:(dna,style,hint)=>CharStyles.isNewStyle(style)?CharStyles.styleDirective(style):CharEngine.formatCharacterDnaPrompt(dna,style,hint)});import('/ai-sync.js').then(m=>{window.AnimatoAiSync=m;window.dispatchEvent(new Event('animato:ai-sync-ready'))}).catch(()=>{});import('/character-light.js').then(m=>{window.AnimatoLight=m}).catch(()=>{});import('/character-guard.js').then(m=>{window.AnimatoCharGuard=m;window.dispatchEvent(new Event('animato:char-guard-ready'))}).catch(()=>{});window.dispatchEvent(new Event('animato:char-engine-ready'));window.dispatchEvent(new Event('animato:bg-ready'));</script>
+<script type="module">import * as Sync from '/sync.js';import * as Gen from '/generation.js';import * as CharUtils from '/character-builder-utils.js';import * as TranscribeAlign from '/transcribe-align.js';import * as Transcriber from '/transcriber-client.js';import * as CharEngine from '/character-engine.js';import * as CharStyles from '/character-styles.js';import * as BgMode from '/background-mode.js';import * as SendToAi from '/send-to-ai.js';import * as Motion from '/motion-polish.js';window.AnimatoMotion=Motion;import * as Face from '/expressions.js';window.AnimatoFace=Face;import * as Acting from '/acting.js';window.AnimatoActing=Acting;import * as Gaze from '/gaze.js';window.AnimatoGaze=Gaze;import * as PStage from '/portrait-stage.js';import * as CastId from '/cast-identity.js';import * as NounIcons from '/noun-icons.js';import * as Depth from '/depth.js';import * as Scenery from '/scenery.js';window.AnimatoPStage=PStage;window.AnimatoCast=CastId;window.AnimatoNouns=NounIcons;window.AnimatoDepth=Depth;window.AnimatoScenery=Scenery;import * as Director from '/director.js';window.AnimatoDirector=Director;import * as Shots from '/shots.js';window.AnimatoShots=Shots;import * as Engage from '/engage.js';window.AnimatoEngage=Engage;import * as CharPack from '/character-pack.js';window.AnimatoCharPack=CharPack;import * as CharIK from '/character-ik.js';window.AnimatoIK=CharIK;import * as MyBg from '/my-backgrounds.js';import * as Alive from '/liveliness.js';import * as Cinema from '/cinema.js';import * as PartsGuide from '/parts-guide.js';import * as CT from '/content-types.js';import * as PM from '/projects.js';window.AnimatoPM=PM;window.AnimatoCT=CT;window.AnimatoAlive=Alive;window.AnimatoCinema=Cinema;window.AnimatoParts=PartsGuide;window.AnimatoMyBg=MyBg;import * as PhotoTags from '/photo-tags.js';import * as PhotoStore from '/photo-store.js';import * as Team from '/production-team.js';window.AnimatoTeam=Team;window.AnimatoPhotoTags=PhotoTags;window.AnimatoPhotos=PhotoStore;window.AnimatoBg=BgMode;window.AnimatoSend=SendToAi;window.AnimatoCharStyles=CharStyles;window.AnimatoSync=Sync;window.AnimatoGen=Gen;window.AnimatoCharUtils=CharUtils;window.AnimatoTranscribeAlign=TranscribeAlign;window.AnimatoTranscriber=Transcriber;window.AnimatoCharEngine=Object.assign({},CharEngine,{formatCharacterDnaPrompt:(dna,style,hint)=>CharStyles.isNewStyle(style)?CharStyles.styleDirective(style):CharEngine.formatCharacterDnaPrompt(dna,style,hint)});import('/ai-sync.js').then(m=>{window.AnimatoAiSync=m;window.dispatchEvent(new Event('animato:ai-sync-ready'))}).catch(()=>{});import('/character-light.js').then(m=>{window.AnimatoLight=m}).catch(()=>{});import('/character-guard.js').then(m=>{window.AnimatoCharGuard=m;window.dispatchEvent(new Event('animato:char-guard-ready'))}).catch(()=>{});window.dispatchEvent(new Event('animato:char-engine-ready'));window.dispatchEvent(new Event('animato:bg-ready'));</script>
 <style>:root{color-scheme:dark;--bg:#15171c;--fg:#e4e6eb;--mu:#98a0ad;--card:#1d2027;--card2:#242831;--line:#2e333d;--line2:#3d4350;--ac:#4f8cff;--acf:#fff;--wash:#12141a;--err:#f2897f;--ok:#6fcf97;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme="light"]{color-scheme:light;--bg:#f2f3f5;--fg:#1c1f26;--mu:#5d6572;--card:#fff;--card2:#f6f7f9;--line:#dcdfe4;--line2:#c3c8d0;--ac:#1f5fd1;--acf:#fff;--wash:#eceef1;--err:#b3261e;--ok:#217a44}
 html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
@@ -1690,9 +1690,10 @@ const TK={
    x:o.x??800,y:o.y??300,scale:o.scale??1,layer:o.layer||'back',par:o.par??0,screen:o.screen,show:[t0,t1??999],
    animate:t=>{const u=EZ((t-t0)/.4),e=t1?EZ((t1-t)/.3):1,m=Math.min(u,e);return{scale:(.8+.2*m)*(1+(o.pulse?o.pulse*S(t*3):0)),opacity:(o.flicker?.88+.12*S(t*23)*S(t*7):1)*m}}}},
  shake:(t,a=6,f=31)=>S(t*f)*a*(.6+.4*S(t*17.3)),
- icon:(n,a,b)=>(ICONS[n]||ICONS.question)(a,b),
+ /* the everyday-things library (public/noun-icons.js: bed, door, cup, school, bus...) fills in every name the app's own pictures do not have */
+ icon:(n,a,b)=>(ICONS[n]||(window.AnimatoNouns&&window.AnimatoNouns.NOUN_ICONS[n])||ICONS.question)(a,b),
  // item: an icon that pops onto the screen. o:{x,y,scale,t0,t1,layer,float,spin,rot,par,screen}
- item:(n,a,o={})=>{const t0=o.t0??0,t1=o.t1;return{svg:TK.icon(n,a,o.b),x:o.x??800,y:o.y??450,scale:o.scale??1,layer:o.layer||'back',par:o.par??0,screen:o.screen,show:[t0,t1??999],
+ item:(n,a,o={})=>{const t0=o.t0??0,t1=o.t1;return{_icon:n,follow:o.follow,fat:o.at,fdx:o.fdx,fdy:o.fdy,_hold:!!o.hold,svg:TK.icon(n,a,o.b),x:o.x??800,y:o.y??450,scale:o.scale??1,layer:o.layer||'back',par:o.par??0,screen:o.screen,show:[t0,t1??999],
   animate:t=>{const k=EZ((t-t0)/.35),ov=k<1?1+.18*S(PI*k):1,e=t1?EZ((t1-t)/.25):1,u=Math.min(k,e);return{scale:(.35+.65*u)*ov*(1+(o.pulse?o.pulse*S(t*5):0)),opacity:u,y:(o.float?S(t*1.6)*o.float:0)+(1-k)*30,rot:(o.rot||0)+(o.spin?t*o.spin:0)+(o.wobble?S(t*3)*o.wobble:0)}}}},
  // slide: any svg string travelling between two points. o:{x0,y0,x1,y1,t0,t1,s0,s1,r0,r1,fadeOut,layer,ease}
  slide:(svg,o={})=>{const t0=o.t0??0,t1=o.t1??t0+1,x0=o.x0??800,y0=o.y0??450,x1=o.x1??x0,y1=o.y1??y0;
@@ -2291,7 +2292,8 @@ Captions: {from, to, text, pos}. pos is omitted for the normal bottom subtitle, 
 Rules: output valid JavaScript only, straight quotes, every scene needs a duration, never use external files or network calls.
 
 CINEMATIC TOOLKIT v2 (all of these are available as plain functions; use them heavily, they are what makes the film feel professional):
-ICONS (labelled picture props): icon(name, text) returns an svg string drawn around (0,0). Names: coin, bill, stack, bag(label), box(label), well(label), rocket(label), flame, chartUp, chartDown, bulb, gear, laptop(label), house, trophy, crown, phone(label), newspaper(headline), chip(label), globe, lock, star, heart, fire, storm, factory, tower(label), car, flag(label), question, check, cross, clock, folder(label), sign(label), person(colour).
+ICONS (labelled picture props): icon(name, text) returns an svg string drawn around (0,0). Names: coin, bill, stack, bag(label), box(label), well(label), rocket(label), flame, chartUp, chartDown, bulb, gear, laptop(label), house, trophy, crown, phone(label), newspaper(headline), chip(label), globe, lock, star, heart, fire, storm, factory, tower(label), car, flag(label), question, check, cross, clock, folder(label), sign(label), person(colour). EVERYDAY THINGS (same icon()/item() call): ${((window.AnimatoNouns&&window.AnimatoNouns.NOUN_NAMES)||[]).join(', ')}.
+SHOW WHAT IS SAID (most important rule for viewers watching on mute): every concrete thing the narrator names (a bed, a clock, a door, a bus, a cup, a phone...) must be SEEN on screen at the moment its word is said, (in a beat: ['item','bed',null,1250,520,1,'@"bed"']; in a scene: item('bed',null,{x:1250,y:520,t0:<second the word is said>})) or as a real part of the set. One picture at a time, near the person who uses it, never covering a face. A thing a person holds (wallet, cup, phone, letter, money, key, book) goes IN their hands: item('wallet',null,{follow:'<their id>',at:'chest',fdy:70,layer:'front',scale:.42,t0:..}) and the person acts 'present' (both hands up showing it). STORY LOOK (the short-story style that keeps people watching): the person is small in a big, detailed world in wide shots and fills the frame in close-ups; the camera flies in from wide on new moments; the time of day tells the story (write 'that night', 'the next morning', and use night or warm morning sets); every few seconds something new happens on screen (a sign goes up, a thing is built, someone arrives). If the app has no picture for it, build it from shapes.
 item(name, text, {x, y, scale, t0, t1, layer, float, spin, rot, wobble, pulse, par, screen}) a ready prop that POPS in at t0 (with a bounce) and pops out at t1. Example: item('well','NVIDIA',{x:1150,y:640,t0:.5}), item('bulb',null,{x:600,y:260,t0:2,t1:3.5,float:8}).
 flyTo(svg, {t0, t1, x0, y0, x1, y1, arc, spin, shrink, scale}) one object thrown in an arc and swallowed at the end. flyMany(svg, n, {t0, gap, dur, x0, y0, x1, y1, jx, jy, arc, scale}) a stream of them: write ...flyMany(icon('bill'), 8, {x0:600, y0:620, x1:1150, y1:650, t0:2, gap:.35, scale:.5}) in props. Use it for money into a box, a well or a machine, letters into a mailbox, coins into a jar.
 slide(svg, {t0, t1, x0, y0, x1, y1, s0, s1, r0, r1, arc, spin, fadeOut, layer}) moves any svg between two points.
@@ -3698,6 +3700,12 @@ function guardLoaded(r){
   /* every person's body acts the story: verbs in the narration the file never acted out become real actions (wind-up, strike, settle) */
   try{if(window.AnimatoGaze)window.AnimatoGaze.directGaze(r.SC)}catch(e){}
   try{if(window.AnimatoActing){const ad=window.AnimatoActing.directActing(r.SC);if(ad.added)(r.repairs=r.repairs||[]).push('Added '+ad.added+' body action'+(ad.added>1?'s':'')+' the narration called for but the file never acted out.')}}catch(e){}
+  /* HOLD IT UP: a thing the narrator names that a person can hold (the wallet, the cup, the letter) sits in the main person's hands, so they
+     lift both hands to show it for as long as it is on screen, unless the file has them doing something else then */
+  try{(r.SC||[]).forEach(sc=>{(sc.props||[]).forEach(p=>{if(!p||!p._hold||!p.follow||!Array.isArray(p.show))return;const ch=sc.characters||[];
+   const c=ch.find(q=>q&&q._who===p.follow)||(/^#\d+$/.test(p.follow)?ch[+p.follow.slice(1)]:null);if(!c)return;
+   const t0=p.show[0],t1=Math.min(+sc.duration||5,p.show[1]);if(Array.isArray(c._busy)&&c._busy.some(([x,y])=>t0<y&&t1>x))return;
+   (c._autoAct=c._autoAct||[]).push({t0,t1:Math.max(t0+.5,t1-.25),kind:'present',verb:'holds'})})})}catch(e){}
   /* THE DIRECTOR: people arrive when the narration says they come, and a static camera becomes shots that follow what each phrase is about (feet, face, hands, the hit, the scream) */
   try{if(window.AnimatoDirector){/* vertical films restage people (rows, spacing, size), so named shots there aim at where each person was really DRAWN in the last frame */
   const livePos=r.ar==='9:16'?((sc,name,T)=>{const P=FRAME_POS[name];if(!P||P.sc!==sc||Math.abs((P.T||0)-T)>.3)return null;const nh={human:596,doodle:657,stickman:648,original:722,custom:700}[P.st]||640;return{x:P.x,y:P.y,s:P.s*nh/598}}):null;
@@ -3802,6 +3810,12 @@ function loadScenesRaw(code){
   rec.forEach((rc,i)=>{if(rc&&SC[i]){if(!SC[i].narration&&aligned[i])SC[i].narration=aligned[i];SC[i].captions=rc.captions}});
  }
  if(TH){TH.duration=10;TH.characters=(Array.isArray(TH.characters)?TH.characters:(TH.character?[TH.character]:[])).filter(c=>c&&typeof c==='object');TH.captions=[];TH.props=Array.isArray(TH.props)?TH.props:[];TH.name='Thumbnail';TH.cut=true;TH.fade=.05;TH.ar='16:9'}
+ /* SHOW WHAT IS SAID (public/scenery.js): a scene written as scene({...}) also gets a picture of every thing its narration names that it does not
+    already show (a bed, a clock, a bus...), one at a time, at the moment the word is said. Beats already got theirs when they were expanded. */
+ try{const mk=baseEnv.item||ENV.item;const Scenery=window.AnimatoScenery;if(mk&&Scenery&&Scenery.autoProps)SC.forEach(s=>{if(!s||s._autoScenery||s.auto===false)return;const tx=String(s.narration||(s.captions||[]).map(c=>c.text).join(' ')).trim();if(!tx)return;
+  Scenery.autoProps(tx,s.duration,s.props,s.characters).filter(t=>t[0]==='item').forEach(t=>{const[,n,l,x,y,k,t0,t1,ex]=t;try{const it=mk(n,l,Object.assign({x,y,scale:k,t0,t1},ex||{}));if(it){it._auto=n;s.props.push(it)}}catch(e){}});s._autoScenery=true})}catch(e){console.warn('scenery failed',e)}
+ /* THE STORY'S CLOCK, SEEN: "that night" turns the picture deep blue, "the next morning" warm gold (unless the scene chose its own colour) */
+ try{const Scn=window.AnimatoScenery;if(Scn&&Scn.daytimeTint)SC.forEach(s=>{const d=Scn.daytimeTint(s.narration||(s.captions||[]).map(c=>c.text).join(' '),s);if(d){s.tint=d.tint;s._daytime=d.name}})}catch(e){}
  /* CAST IDENTITY (public/cast-identity.js): the same person is the same person in every scene; only clothes change */
  let castFix=[];try{if(window.AnimatoCast)castFix=window.AnimatoCast.lockCast(TH?SC.concat([TH]):SC,{narration})}catch(e){console.warn('cast identity failed',e)}
  /* SAVED CHARACTER SAFETY NET: when the person's own character is selected, anyone the file names without drawing them (or leaves unnamed) is built from the saved pack instead of falling back to the default figure */
@@ -4175,7 +4189,10 @@ function camV(sc,T,A,S,info){let c={};try{c=(typeof sc.camera==='function'?sc.ca
  let z=Math.min(sc._named?4.2:3,Math.max(1,pn(c.zoom,1)));const hw=A.FW/2,hasX=c.x!==undefined&&c.x!==null&&isFinite(+c.x);let cx=(hasX&&!(S&&S.reframe))?(A.k==='9:16'&&!(S&&S.noVStage)&&!sc._namedLive?vMapX(sc,+c.x):+c.x):(A.k==='9:16'?autoX(info||[]):800);
  let cy=pn(c.y,450);
  /* CINEMA (public/cinema.js): a camera the AI left still gets a shot rhythm that follows the phrases, eased moves and a slow push */
- try{const CN=window.AnimatoCinema,dur=pn(sc.duration,5);if(CN&&sc.cinema!==false&&sc._directed&&!sc._named&&A.k==='9:16'&&!(S&&S.noVStage)){const n2=(info||[]).length;if(z<(n2>1?1.3:1.45)){z=n2>1?1.3:1.45}cy+=190/z}
+ try{const CN=window.AnimatoCinema,dur=pn(sc.duration,5);if(CN&&sc.cinema!==false&&sc._directed&&!sc._named&&A.k==='9:16'&&!(S&&S.noVStage)){const n2=(info||[]).length;if(z<(n2>1?1.45:1.75)){z=n2>1?1.45:1.75}
+  /* SWOOP: a new moment opens wide, the person small in the world, and the camera flies in to them, then keeps creeping */
+  if(CN.swoopAt&&dur>=1.5){const w=CN.swoopAt(sc,T,dur);z=(1+(z-1)*w.k)*w.creep;c={...c,rot:pn(c.rot,0)+w.tilt}}
+  cy+=190/z}
  if(CN&&sc.cinema!==false&&!sc._directed&&dur>=2&&(sc.captions||[]).length){
   if(sc._camStatic===undefined){let zs=[],xs=[];for(let q=0;q<=8;q++){let cc={};try{cc=(typeof sc.camera==='function'?sc.camera(dur*q/8):sc.camera)||{}}catch(e){}zs.push(pn(cc.zoom,1));xs.push(pn(cc.x,800))}sc._camStatic=Math.max(...zs)-Math.min(...zs)<.45&&Math.max(...xs)-Math.min(...xs)<260}
   if(sc._camStatic){const ppl=(info||[]).map(o=>({k:o.k,x:o.x,hw:o.hw}));const r=CN.cinema(sc,T,dur,{x:cx,y:cy,z,r:pn(c.rot,0)},ppl,{portrait:A.k==='9:16'});z=r.z;cx=r.x;cy=r.y;c={...c,rot:r.r}}}}catch(e){window.__cinErr=e.message}
@@ -4386,7 +4403,7 @@ return{gy:b.gy,svg:`<g transform="translate(${b.gx+(cam.x-800)*b.q},${b.gy+(cam.
    if(P9&&c.style!=='lines'&&!(S&&S.capLines)&&ws.length){const ch=[];let cur=[],cl2=0;ws.forEach((w,wi3)=>{if(cur.length&&(cur.length>=3||cl2+w.length>13)){ch.push(cur);cur=[];cl2=0}cur.push(wi3);cl2+=w.length+1;if(/[.,!?;:]$/.test(w)){ch.push(cur);cur=[];cl2=0}});if(cur.length)ch.push(cur);
     const grp=ch.find(g=>g.includes(act))||ch[0],txt=grp.map(k=>ws[k]).join(' '),fs=Math.min(78,Math.floor(430/(Math.max(4,txt.length)*.7))),first=grp[0]===act,pop=first?1.07:1,kp=EZ((capT-c.from)/.12);
     const words=grp.map(k=>`<tspan fill="${k===act?'#ffd54a':'#ffffff'}">${esc(ws[k].toUpperCase())}</tspan>`).join('<tspan> </tspan>');
-    cap+=`<g opacity="${kp}" transform="translate(800 650) scale(${pop})"><text x="0" y="0" text-anchor="middle" font-size="${fs}" font-weight="900" font-family="Impact,'Arial Black',Arial,sans-serif" letter-spacing="1" stroke="#000" stroke-width="${(fs*.2).toFixed(1)}" stroke-linejoin="round" paint-order="stroke">${words}</text></g>`;continue}
+    cap+=`<g opacity="${kp}" transform="translate(800 615) scale(${pop*(1+.22*(1-kp))})"><text x="0" y="0" text-anchor="middle" font-size="${fs}" font-weight="900" font-family="Impact,'Arial Black',Arial,sans-serif" letter-spacing="1" stroke="#000" stroke-width="${(fs*.2).toFixed(1)}" stroke-linejoin="round" paint-order="stroke">${words}</text></g>`;continue}
    const ka=EZ((capT-c.from)/.18),yb=(P9?792:842)-(1-ka)*14,y0=yb-(ls.length-1)*lh;let wi=0;
    const mk=(under)=>ls.map((ln,li)=>`<text x="800" y="${(y0+li*lh).toFixed(0)}" text-anchor="middle" font-size="${sz}" font-weight="900" font-family="Impact,'Arial Black',Arial,sans-serif" letter-spacing="1" ${under?`fill="#000" stroke="#000" stroke-width="${(sz*.22).toFixed(1)}" stroke-linejoin="round"`:''}>${ln.map(w=>{const k=wi++,col=under?'#000':(k===act?'#ffd54a':(k<act?'#ffffff':'#ffffff'));const op=(!under&&k>act)?.62:1;return `<tspan fill="${col}" fill-opacity="${op}">${esc(w)}</tspan>`}).join('<tspan> </tspan>')}</text>`).join('');
    cap+=`<rect x="${800-FW/2}" y="640" width="${FW}" height="260" fill="url(#${fx}cg)" opacity="${ka}"/><g opacity="${ka}">${mk(true)}`;wi=0;cap+=`${mk(false)}</g>`}}
@@ -4395,7 +4412,7 @@ return{gy:b.gy,svg:`<g transform="translate(${b.gx+(cam.x-800)*b.q},${b.gy+(cam.
  const wait='';
  const phBg=!!PHT()&&PHT().isPhotoBackground(sc.background),phV=phBg?phVer():0;PH_LIVE=!!live;
  if(phBg&&sc._phV!==phV){sc._phV=phV;sc._phB={};sc._bgL=null}
- const myB=myBgRec(sc.background),rawBg=myB?(sc._myS||(sc._myS={}))[(live?'l':'e')+A.k]||(sc._myS[(live?'l':'e')+A.k]=myBgSvg(myB,!!live,A)):phBg?(sc._phB[(live?'l':'e')+A.k]||(sc._phB[(live?'l':'e')+A.k]=photoBgSvg(sc.background,!!live,A))):(sc._bg||(sc._bg=polishBg(cleanSvg(BGP[sc.background]||sc.background||BGP.outdoor)))),kbT=phBg?PHT().backgroundKb(Math.round(rl*6)/6,len,'in'):'',bg=live?((sc._bgL||(sc._bgL={}))[fx]||(sc._bgL[fx]=scopeSvgIds(rawBg,fx))):scopeSvgIds(rawBg,fx),dyn=scopeSvgIds(propsSvg(sc,T,false,cam,false,A)+items.filter(o=>!o.pres).map(o=>o.svg).join('')+propsSvg(sc,T,true,cam,false,A),fx),over=tn+`<rect width="${FW}" height="900" fill="url(#${fx}vg)"/><g transform="translate(${SX},0)">${scopeSvgIds(propsSvg(sc,T,true,{x:800,y:450},true,A),fx)}</g><rect width="${FW}" height="900" fill="#fff" opacity="${CL(fl2)}"/>${(()=>{const pr=items.filter(o=>o.pres);return pr.length?pr.map(o=>{const w=P9?170:330,x0=o.px-w/2;return`<g opacity=".92"><rect x="${x0}" y="${P9?560:430}" width="${w}" height="${P9?340:470}" rx="26" fill="#0b1020" opacity=".32"/><ellipse cx="${o.px}" cy="${P9?886:892}" rx="${w*.36}" ry="11" fill="#000" opacity=".35"/>${scopeSvgIds(o.svg,fx+'pr')}</g>`}).join(''):''})()}<g transform="translate(${SX},0)">${cap}</g><rect width="${FW}" height="900" fill="#000" opacity="${fade}"/>${wait}`;
+ const myB=myBgRec(sc.background),rawBg=myB?(sc._myS||(sc._myS={}))[(live?'l':'e')+A.k]||(sc._myS[(live?'l':'e')+A.k]=myBgSvg(myB,!!live,A)):phBg?(sc._phB[(live?'l':'e')+A.k]||(sc._phB[(live?'l':'e')+A.k]=photoBgSvg(sc.background,!!live,A))):(sc._bg||(sc._bg=polishBg(cleanSvg(BGP[sc.background]||sc.background||BGP.outdoor)))),kbT=phBg?PHT().backgroundKb(Math.round(rl*6)/6,len,'in'):'',bg=live?((sc._bgL||(sc._bgL={}))[fx]||(sc._bgL[fx]=scopeSvgIds(rawBg,fx))):scopeSvgIds(rawBg,fx),DP=(()=>{try{const Dp=window.AnimatoDepth;return Dp?Dp.depthLayers(sc,T,cam,FW,fx,{lite:!!(live&&QLITE)}):{back:'',front:'',defs:''}}catch(e){return{back:'',front:'',defs:''}}})(),dyn=DP.back+scopeSvgIds(propsSvg(sc,T,false,cam,false,A)+items.filter(o=>!o.pres).map(o=>o.svg).join('')+propsSvg(sc,T,true,cam,false,A),fx),over=tn+(DP.front?`<defs>${DP.defs}</defs>${DP.front}`:'')+`<rect width="${FW}" height="900" fill="url(#${fx}vg)"/><g transform="translate(${SX},0)">${scopeSvgIds(propsSvg(sc,T,true,{x:800,y:450},true,A),fx)}</g><rect width="${FW}" height="900" fill="#fff" opacity="${CL(fl2)}"/>${(()=>{const pr=items.filter(o=>o.pres);return pr.length?pr.map(o=>{const w=P9?170:330,x0=o.px-w/2;return`<g opacity=".92"><rect x="${x0}" y="${P9?560:430}" width="${w}" height="${P9?340:470}" rx="26" fill="#0b1020" opacity=".32"/><ellipse cx="${o.px}" cy="${P9?886:892}" rx="${w*.36}" ry="11" fill="#000" opacity=".35"/>${scopeSvgIds(o.svg,fx+'pr')}</g>`}).join(''):''})()}<g transform="translate(${SX},0)">${cap}</g><rect width="${FW}" height="900" fill="#000" opacity="${fade}"/>${wait}`;
  return{FW,fx,sc,cdefs,bg,kb:kbT,phV,camTfStr:camTf(cam,A),bgTfStr:camTfBg(cam,A),dyn,over,i}}
 /* Human characters soften shadows with SVG blur filters. By default the browser converts every pixel to linear colour and back for each blur, which is the slowest part of drawing (and exporting) a human.
    Blurring in plain sRGB looks the same to the eye and is much cheaper, so every filter is told to use it. */
@@ -4408,16 +4425,28 @@ function activeStageHost(){const tl=$('#timelineView');return(tl&&!tl.hidden)?$(
 /* LIVE PREVIEW SPEED: a drawn set has many soft lights (blur filters); redrawing them on every frame while the camera moves made phones
    stutter. The live preview turns each scene's drawn set into one picture the first time it is shown (sharp at 2x), so a frame only moves
    a picture. Exported videos still draw the full set every frame. */
-const BG_BMP_SCALE=Math.min(2,Math.max(1.25,(window.devicePixelRatio||1)*.85));
+const BG_BMP_SCALE=Math.min(1.45,Math.max(1.25,(window.devicePixelRatio||1)*.85)); /* about 3 million pixels at most: a bigger picture made the phone stall for a moment at every scene change */
 const bgBmpTag=u=>`<image href="${u}" x="0" y="0" width="1600" height="900" preserveAspectRatio="none"/>`;
 let BG_BMP_N=0;
+/* The set is turned into one picture in SMALL PIECES: drawing a whole blurred, lit set in one go blocked a phone for a quarter to half a second, which
+   froze the picture while the voice played on (once at every scene change). Now it is drawn a strip at a time, each strip in its own quiet moment
+   between frames, and the finished picture is encoded off the main thread. */
+const BG_TILES_X=6,BG_TILES_Y=3;
+const idleSlice=f=>{if(typeof requestIdleCallback==='function')requestIdleCallback(f,{timeout:250});else setTimeout(f,16)};
 function rasterBg(sc,bg,bgEl){if(!sc||sc._bgBmpBusy||sc._bgBmp||/<image\b/i.test(bg)||typeof document==='undefined')return;sc._bgBmpBusy=true;
  try{const W=Math.round(1600*BG_BMP_SCALE),H=Math.round(900*BG_BMP_SCALE),src='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+W+'" height="'+H+'" viewBox="0 0 1600 900">'+bg+'</svg>',
   u=URL.createObjectURL(new Blob([src],{type:'image/svg+xml'})),im=new Image();
-  im.onload=()=>{try{const c=document.createElement('canvas');c.width=W;c.height=H;c.getContext('2d').drawImage(im,0,0,W,H);URL.revokeObjectURL(u);
-   c.toBlob(b=>{sc._bgBmpBusy=false;if(!b)return;sc._bgBmp=URL.createObjectURL(b);if(++BG_BMP_N>80){BG_BMP_N=0}
-    if(PV_EL&&PV_BG_REF===sc&&bgEl&&bgEl.isConnected)bgEl.innerHTML=bgBmpTag(sc._bgBmp)},'image/png')}catch(e){sc._bgBmpBusy=false;sc._bgBmp=null}};
-  im.onerror=()=>{sc._bgBmpBusy=false;URL.revokeObjectURL(u)};im.src=u}catch(e){sc._bgBmpBusy=false}}
+  const fail=()=>{sc._bgBmpBusy=false;try{URL.revokeObjectURL(u)}catch(e){}};
+  im.onload=()=>{try{const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');let n=0;const N=BG_TILES_X*BG_TILES_Y,tw=Math.ceil(W/BG_TILES_X),th=Math.ceil(H/BG_TILES_Y);
+   const step=()=>{try{if(sc._bgEvicted){sc._bgEvicted=false;return fail()}
+     const tx=n%BG_TILES_X,ty=Math.floor(n/BG_TILES_X),x=tx*tw,y=ty*th,w=Math.min(tw,W-x),h=Math.min(th,H-y);
+     g.save();g.beginPath();g.rect(x,y,w,h);g.clip();g.drawImage(im,0,0,W,H);g.restore();
+     if(++n<N)return idleSlice(step);
+     URL.revokeObjectURL(u);
+     c.toBlob(b=>{sc._bgBmpBusy=false;if(!b)return;sc._bgBmp=URL.createObjectURL(b);if(++BG_BMP_N>80){BG_BMP_N=0}
+      if(PV_EL&&PV_BG_REF===sc&&bgEl&&bgEl.isConnected)bgEl.innerHTML=bgBmpTag(sc._bgBmp)},'image/png')}catch(e){fail();sc._bgBmp=null}};
+   idleSlice(step)}catch(e){fail();sc._bgBmp=null}};
+  im.onerror=fail;im.src=u}catch(e){sc._bgBmpBusy=false}}
 /* Update the live picture in place: when this frame has the same elements as the last one (the usual case: people and props only moved),
    only the changed attributes are written. Replacing everything each frame made the browser rebuild every person (hundreds of shared
    shapes each) from scratch, which is what made playback stutter on phones. */
@@ -4563,15 +4592,24 @@ function ploop(ts){if(!PL){PLR=0;return}
   }
  }
  if(PL.dirty&&!document.hidden&&ts-PL.lr>Math.max(33,(PL.cost||0)*1.6)){PL.lr=ts;PL.dirty=false;qSample(ts);const c0=performance.now();frame();PL.cost=(PL.cost||0)*.8+(performance.now()-c0)*.2;pui()}
- if(PL.playing)prewarmNext();
+ prewarmNext();
  PLR=requestAnimationFrame(ploop)}
 /* SMOOTH SCENE CHANGES: the first frame of a scene used to build its set, people and drawings from scratch (a visible hitch on phones).
    While a scene plays, the next one is prepared in idle time: its people and shapes are built into the caches and its set is turned into
    a picture, so the cut lands on a ready frame. Nothing is drawn on screen and the export is not touched. */
-function prewarmNext(){try{if(!PL||!PL.st||PL._pwBusy)return;const T=PL.T;let i=0;while(i<PL.SC.length-1&&T>=PL.st[i+1])i++;const j=i+1;if(j>=PL.SC.length)return;
- const sc=PL.SC[j];if(!sc||sc._pw||PL.st[j]-T>2.4)return;PL._pwBusy=true;
- const go=()=>{try{if(!PL||PL.SC[j]!==sc)return;PH_REF=true;let d;try{d=computeFrame(PL.st[j]+.04,true,PL,'pw_')}finally{PH_REF=false}sc._pw=1;if(d&&!d.kb&&d.sc===sc&&!sc._bgBmp)rasterBg(sc,d.bg,null)}catch(e){sc._pw=1}finally{if(PL)PL._pwBusy=false}};
- if(typeof requestIdleCallback==='function')requestIdleCallback(go,{timeout:700});else setTimeout(go,30)}catch(e){if(PL)PL._pwBusy=false}}
+/* WARM AHEAD AND LET GO: the next few scenes are prepared one at a time in idle moments (their people and shapes built, their set turned into one
+   picture), starting well before they are needed, so a scene change never has to do that work in the middle of a frame. Scenes far behind or far
+   ahead give their pictures back, so a 30 minute film never piles up hundreds of big bitmaps. */
+const WARM_AHEAD=3,WARM_BEHIND=1;
+function prewarmNext(){try{if(!PL||!PL.st||PL._pwBusy||!PL.SC||!PL.SC.length)return;const T=PL.T;let i=0;while(i<PL.SC.length-1&&T>=PL.st[i+1])i++;
+ if(PL._evI!==i){PL._evI=i;for(let k=0;k<PL.SC.length;k++){if(k>=i-WARM_BEHIND&&k<=i+WARM_AHEAD+1)continue;const q=PL.SC[k];if(q&&q._bgBmpBusy)q._bgEvicted=true;if(q&&(q._bgBmp||q._pw||q._bgL)){if(q._bgBmp){try{URL.revokeObjectURL(q._bgBmp)}catch(e){}}q._bgBmp=null;q._pw=0;q._bgL=null}}}
+ let j=-1;for(let k=i;k<=Math.min(PL.SC.length-1,i+WARM_AHEAD);k++){const q=PL.SC[k];if(q&&!q._pw){j=k;break}}
+ if(j<0)return;const sc=PL.SC[j];PL._pwBusy=true;
+ const go=()=>{try{if(!PL||PL.SC[j]!==sc)return;PH_REF=true;let d;try{d=computeFrame(PL.st[j]+.04,true,PL,'pw_')}finally{PH_REF=false}sc._pw=1;
+   /* the picture of the set is made in a second idle moment, so the two heavy steps never land in the same frame */
+   const ras=()=>{try{if(PL&&PL.SC[j]===sc&&d&&!d.kb&&d.sc===sc&&!sc._bgBmp)rasterBg(sc,d.bg,null)}catch(e){}};
+   if(typeof requestIdleCallback==='function')requestIdleCallback(ras,{timeout:1500});else setTimeout(ras,60)}catch(e){sc._pw=1}finally{if(PL)PL._pwBusy=false}};
+ if(typeof requestIdleCallback==='function')requestIdleCallback(go,{timeout:1200});else setTimeout(go,30)}catch(e){if(PL)PL._pwBusy=false}}
 /* ---- Processing overlay (shown while the voiceover is transcribed, timestamped and synced) ---- */
 const PROC={order:['read','transcribe','arrange','sync'],timer:0,hideT:0,mode:'audio'};
 const procTick=()=>new Promise(r=>setTimeout(r,40));
@@ -4744,6 +4782,7 @@ async function loadOwnAudioFiles(fileList){
   const targetRate=decoded[0].rate||24000;
   const gapSamples=files.length>1?Math.round(targetRate*0.12):0;
   const pcmClips=decoded.map(d=>resamplePcm(d.a,d.rate,targetRate));
+  const decodedSecs=decoded.map(d=>d.a.length/d.rate);
   const clipDurs=pcmClips.map((a,i)=>(a.length+(i<pcmClips.length-1?gapSamples:0))/targetRate);
   let combined;
   if(pcmClips.length===1){
@@ -4754,6 +4793,8 @@ async function loadOwnAudioFiles(fileList){
    let offset=0;
    pcmClips.forEach((a,i)=>{combined.set(a,offset);offset+=a.length;if(i<pcmClips.length-1)offset+=gapSamples});
   }
+  /* a long voiceover is huge in memory (30 minutes = hundreds of MB per copy): every copy but the one the player keeps is released now, so the phone is not squeezed while the film plays */
+  decoded.forEach(d=>{d.a=null});pcmClips.length=0;
   lastTtsPcm={a:combined,rate:targetRate};
   buildWave(combined);
   if(!lastNarration)lastNarration=PL.SC.map(s=>s.narration||s.captions.map(c=>c.text).join(' ')).filter(Boolean).join(' ')||'Custom voiceover';
@@ -4844,7 +4885,7 @@ async function loadOwnAudioFiles(fileList){
 
   PL.T=0;PL.playing=false;PL.dirty=true;
   if(typeof syncPlayerVoScript==='function')syncPlayerVoScript({SC:PL.SC,narration:lastNarration,ownAudio:PL.ownAudio});
-  renderAudioClipList(listEl,files,decoded.map(d=>d.a.length/d.rate),arrangedClipMatches);
+  renderAudioClipList(listEl,files,decodedSecs,arrangedClipMatches);
   if($('#ttsDownload'))$('#ttsDownload').disabled=false;
   if(prog)prog.value=1;
   const usedAI=!!orderedTranscripts;

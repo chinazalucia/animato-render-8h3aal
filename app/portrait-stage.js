@@ -163,7 +163,7 @@ export function bodyCentreY(cy, zWanted, zCap, person) {
 // ---------------------------------------------------------------------------------------------------------
 // DEPTH PARALLAX: the far background follows the camera a little less than the people do.
 // ---------------------------------------------------------------------------------------------------------
-export const PAR_PAN = .16;           // the backdrop slides 16% less than the world when the camera pans
+export const PAR_PAN = .28;           // the backdrop slides 28% less than the world when the camera pans
 export const PAR_ZOOM = .06;          // ... and zooms 6% less when the camera pushes in
 export const PAR_BACK_ROW = .05;      // the back row of a crowd drifts a hair less than the front row
 
