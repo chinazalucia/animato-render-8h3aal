@@ -3,12 +3,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import zlib from 'node:zlib';
 import { readJobFile, decryptFile, decryptBuffer, encryptFile } from './crypt.mjs';
+import { ffmpegBin } from './ff.mjs';
 const [, , jobDir, partsDir, outDir] = process.argv;
 const KEY = process.env.KEY;
 const job = readJobFile(jobDir, KEY);
 fs.mkdirSync(outDir, { recursive: true });
-const run = (args) => { const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', ...args], { stdio: 'inherit' }); if (r.status !== 0) throw new Error('ffmpeg failed'); };
+const run = (args) => { const r = spawnSync(ffmpegBin, ['-y', '-loglevel', 'error', ...args], { stdio: 'inherit' }); if (r.status !== 0) throw new Error('ffmpeg failed'); };
 const encParts = fs.readdirSync(partsDir).filter((n) => /^part-\d+\.enc$/.test(n)).sort((a, b) => parseInt(a.slice(5)) - parseInt(b.slice(5)));
 if (!encParts.length) throw new Error('No parts to join');
 for (const n of encParts) decryptFile(path.join(partsDir, n), path.join(partsDir, n.replace('.enc', '.mp4')), KEY);
@@ -21,7 +23,7 @@ const pcmFiles = fs.readdirSync(jobDir).filter((n) => /^audio-\d+\.enc$/.test(n)
 const final = path.join(outDir, 'video.mp4');
 if (job.audio && pcmFiles.length) {
   const raw = path.join(outDir, 'audio.raw');
-  fs.writeFileSync(raw, Buffer.concat(pcmFiles.map((n) => decryptBuffer(fs.readFileSync(path.join(jobDir, n)), KEY))));
+  fs.writeFileSync(raw, Buffer.concat(pcmFiles.map((n) => { const d = decryptBuffer(fs.readFileSync(path.join(jobDir, n)), KEY); return job.audio.gz ? zlib.gunzipSync(d) : d; })));
   run(['-i', silent, '-f', 's16le', '-ar', String(job.audio.rate), '-ac', '1', '-i', raw, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', final]);
 } else {
   run(['-i', silent, '-c', 'copy', '-movflags', '+faststart', final]);
